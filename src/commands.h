@@ -7,3 +7,5 @@ typedef struct command{
 } command;
 
 int initialize();
+
+int execute(char* input);
