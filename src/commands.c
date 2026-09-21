@@ -24,7 +24,6 @@ int initialize(){
   command *cabout;
   cabout = malloc(sizeof(command));
   cabout->ptr = about;
-  cabout->ptr();
 
 }
 
