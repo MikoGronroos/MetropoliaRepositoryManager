@@ -8,12 +8,24 @@ int help(){
   
 }
 
+int about(){
+  
+  printf("Mitten is a tool to keep manage repositories.\n");
+  
+}
+
+
 int initialize(){
 
   command *chelp;
   chelp = malloc(sizeof(command));
   chelp->ptr = help;
-  chelp->ptr();
+
+  command *cabout;
+  cabout = malloc(sizeof(command));
+  cabout->ptr = about;
+  cabout->ptr();
+
 }
 
 

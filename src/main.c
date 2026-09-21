@@ -2,7 +2,7 @@
 #include "commands.h"
 
 int main(){
-  printf("Welcome to mitten");
+  printf("Welcome to mitten\n");
   initialize();
   return 0;
 }
