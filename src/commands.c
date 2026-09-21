@@ -14,26 +14,44 @@ int about(){
   
 }
 
+int addToRegistry(commandRegistry *reg, command* com){
+  if(reg->length <= 0){
+    reg->commands = malloc(2 * sizeof(struct command));
+  }else{
+    command** newptr= realloc(reg->commands, (1 + reg->length) * sizeof(struct command));
+    reg->commands = newptr;
+  }
+  reg->length++;
+  reg->commands[reg->length-1] = com;
+  return 0;
+}
 
 int initialize(){
+
+  commandRegistry *registry;
+  registry = malloc(sizeof(commandRegistry));
 
   command *chelp;
   chelp = malloc(sizeof(command));
   chelp->ptr = help;
   chelp->commandName = "help";
   chelp->commandDesc = "prints out information about all the commands";
+  addToRegistry(registry, chelp);
 
   command *cabout;
   cabout = malloc(sizeof(command));
   cabout->ptr = about;
   cabout->commandName = "about";
   cabout->commandDesc = "shows information about the current program";
+  addToRegistry(registry, cabout);
+
+  for(int i = 0; i < registry->length; i++){
+    printf("%s\n", registry->commands[i]->commandDesc);
+  }
 
 }
 
 int execute(char* input){
-
-  printf("%s\n", input); 
   return 0;
 }
 
