@@ -13,8 +13,6 @@ typedef struct commandRegistry{
 
 } commandRegistry;
 
-int initialize();
-
-int execute(char* input);
+commandRegistry* initialize();
 
 int addToRegistry(commandRegistry *reg, command* com);

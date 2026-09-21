@@ -26,7 +26,7 @@ int addToRegistry(commandRegistry *reg, command* com){
   return 0;
 }
 
-int initialize(){
+commandRegistry* initialize(){
 
   commandRegistry *registry;
   registry = malloc(sizeof(commandRegistry));
@@ -45,13 +45,6 @@ int initialize(){
   cabout->commandDesc = "shows information about the current program";
   addToRegistry(registry, cabout);
 
-  for(int i = 0; i < registry->length; i++){
-    printf("%s\n", registry->commands[i]->commandDesc);
-  }
-
-}
-
-int execute(char* input){
-  return 0;
+  return registry;
 }
 
