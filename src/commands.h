@@ -1,13 +1,7 @@
-typedef struct commandmeta{
-  
-  char* commandName;
-  char* commandDesc;
-
-} commandmeta;
-
 typedef struct command{
 
   char* commandName;
+  char* commandDesc;
   int (*ptr)();
 
 } command;
