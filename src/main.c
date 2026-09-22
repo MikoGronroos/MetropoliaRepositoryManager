@@ -9,7 +9,11 @@ int main(){
   char input[256];
   while(true){
     if(scanf("%255s", input) == 1){
-      execute(registry, input);
+      if(execute(registry, input) == 0){
+        
+      }else{
+        printf("The command you entered was faulty\n");
+      }
     }
     while(getchar() != '\n');
   }
