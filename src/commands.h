@@ -1,18 +1,9 @@
 typedef struct command{
 
   char* commandName;
-  char* commandDesc;
-  int (*ptr)();
+  int (*ptr)(void);
 
 } command;
 
-typedef struct commandRegistry{
-
-  command** commands;
-  int length;
-
-} commandRegistry;
-
-commandRegistry* initialize();
-
-int addToRegistry(commandRegistry *reg, command* com);
+int about();
+int help();

@@ -1,1 +1,1 @@
-int execute(commandRegistry* registry, char* command);
+int execute(char* input);
