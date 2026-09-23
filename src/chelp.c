@@ -10,4 +10,5 @@ int help(){
   printf("delete\n");
   printf("help\n");
   printf("about\n");
+  return 0;
 }

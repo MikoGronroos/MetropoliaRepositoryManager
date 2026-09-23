@@ -2,22 +2,24 @@
 #include <string.h>
 #include "commands.h"
 
-#define amountOfCommands 3
+#define amountOfCommands 4
 
 int execute(char* input){
   
   command cmds[amountOfCommands] = {
     {"help", help},
     {"about", about},
-    {"add", add}
+    {"add", add},
+    {"quit", quit}
   };
-
-  int error = 1; 
+  int returnStatus = -1;
   for(int i = 0; i < amountOfCommands; i++){
     if(strcmp(input, cmds[i].commandName) == 0){
-      cmds[i].ptr();
-      error = 0;
+      returnStatus = cmds[i].ptr();
     }
   }
-  return error;
+  if(returnStatus == -1){
+    printf("The command you entered was faulty\n");
+  }
+  return returnStatus;
 }
