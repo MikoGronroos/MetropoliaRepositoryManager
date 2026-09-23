@@ -7,3 +7,4 @@ typedef struct command{
 
 int about();
 int help();
+int add();

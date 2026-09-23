@@ -6,7 +6,8 @@ int execute(char* input){
   
   command cmds[2] = {
     {"help", help},
-    {"about", about}
+    {"about", about},
+    {"add", add}
   };
 
   int error = 1; 
