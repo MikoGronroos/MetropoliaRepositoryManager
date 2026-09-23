@@ -2,5 +2,12 @@
 #include <stdio.h>
 
 int help(){
-  printf("other file help\n");
+  printf("Here is a list of all the commands.\n\n");
+  printf("add\n");
+  printf("show\n");
+  printf("list\n");
+  printf("quit\n");
+  printf("delete\n");
+  printf("help\n");
+  printf("about\n");
 }
