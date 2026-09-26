@@ -4,6 +4,11 @@
 #include <stdlib.h>
 #include "args.h"
 
+void clear_buffer(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
 arguments* parse_args(char* input){
 
   arguments* args = malloc(sizeof(arguments));
@@ -42,6 +47,7 @@ int main(){
   int running = 1;
 
   while(running == 1){
+    fflush(stdout);
     fgets(input, sizeof(input), stdin);
     if(strlen(input) != 0){  
       arguments* args = parse_args(input);
@@ -50,7 +56,6 @@ int main(){
         running = 0;
       }
     }
-    while(getchar() != '\n');
   }
   return 0;
 }
