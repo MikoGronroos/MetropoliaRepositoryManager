@@ -1,7 +1,7 @@
 #include "commands.h"
 #include <stdio.h>
 
-int help(){
+int help(char **args){
   printf("Here is a list of all the commands.\n\n");
   printf("add\n");
   printf("show\n");

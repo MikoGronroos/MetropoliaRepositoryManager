@@ -1,7 +1,7 @@
 #include "commands.h"
 #include <stdio.h>
 
-int about(){
+int about(char **args){
 
   printf("Mitten is a tool for managing repositories\n");
   printf("Project for metropolia c course in Smart Iot Embedded\n");

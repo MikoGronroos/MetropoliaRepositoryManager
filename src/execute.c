@@ -12,10 +12,15 @@ int execute(char* input){
     {"add", add},
     {"quit", quit}
   };
+
+  char *args[2] = {
+    "help",
+    "about",
+  };
   int returnStatus = -1;
   for(int i = 0; i < amountOfCommands; i++){
     if(strcmp(input, cmds[i].commandName) == 0){
-      returnStatus = cmds[i].ptr();
+      returnStatus = cmds[i].ptr(args);
     }
   }
   if(returnStatus == -1){
