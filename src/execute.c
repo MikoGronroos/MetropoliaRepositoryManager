@@ -4,8 +4,7 @@
 
 #define amountOfCommands 4
 
-int execute(char* input){
-  
+int execute(char** args, int length){
   command cmds[amountOfCommands] = {
     {"help", help},
     {"about", about},
@@ -13,13 +12,9 @@ int execute(char* input){
     {"quit", quit}
   };
 
-  char *args[2] = {
-    "help",
-    "about",
-  };
   int returnStatus = -1;
   for(int i = 0; i < amountOfCommands; i++){
-    if(strcmp(input, cmds[i].commandName) == 0){
+    if(strcmp(args[0], cmds[i].commandName) == 0){
       returnStatus = cmds[i].ptr(args);
     }
   }
