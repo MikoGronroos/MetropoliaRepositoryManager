@@ -1,8 +1,9 @@
 #include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 
 int list(char **args){
-  char data[50];
+  char data[256];
   FILE* fptr = fopen("data.txt", "r");
 
   if (fptr == NULL)
@@ -10,9 +11,13 @@ int list(char **args){
   }
   else
   {
-    while (fgets(data, 50, fptr) != NULL)
+    while (fgets(data, 256, fptr) != NULL)
     {
-      printf("%s", data);
+      char* find = strchr(data, ':');
+      int index = find - data;
+      char text[128];
+      strncpy(text, data, index);
+      printf("%s\n", text);
     }
     fclose(fptr);
   }
