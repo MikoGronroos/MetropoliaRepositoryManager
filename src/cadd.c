@@ -7,10 +7,9 @@ int add(char **args){
   
   if(fptr == NULL){
   }else{
-    
-    fputs(args[0],fptr);
-    fputs(":", fptr);
     fputs(args[1], fptr);
+    fputs(":", fptr);
+    fputs(args[2], fptr);
     fputs("\n", fptr);
     fclose(fptr);
   }

@@ -1,2 +1,6 @@
 
 help:about
+add:game :ww.game.ty
+
+amazing :ace.com
+
