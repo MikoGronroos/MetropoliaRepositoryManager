@@ -1,1 +1,2 @@
 kynari:kynari.com
+kouluprojekti:gitlab.com/metropoliaprojekti

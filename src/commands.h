@@ -9,3 +9,4 @@ int about(char **args);
 int help(char **args);
 int add(char **args);
 int quit(char **args);
+int list(char **args);
