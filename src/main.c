@@ -10,7 +10,6 @@ void clear_buffer(void) {
 }
 
 arguments* parse_args(char* input){
-
   arguments* args = malloc(sizeof(arguments));
   int amountOfArgs = 1;
   for(int i = 0; i < strlen(input); i++){
@@ -24,18 +23,19 @@ arguments* parse_args(char* input){
   int offset = 0;
   int index = 0;
   for(int i = 0; i < strlen(input); i++){
+    currentStrSize++;
     if(input[i] == ' ' || input[i+1] == '\0'){
       args->args[index] = (char *)malloc(currentStrSize+1);
       int k = 0;
-      for(int j = offset; j < offset + currentStrSize; j++){
+      for(int j = offset; j < offset + currentStrSize - 1; j++){
         args->args[index][k] = input[j]; 
         k++;
       }
+      args->args[index][k] = '\0'; 
       index++;
-      offset += currentStrSize + 1;
+      offset += currentStrSize;
       currentStrSize = 0;
     }
-    currentStrSize++;
   }
   return args;
 }
