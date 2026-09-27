@@ -11,3 +11,4 @@ int add(char **args, int length);
 int quit(char **args, int length);
 int list(char **args, int length);
 int del(char **args, int length);
+int show(char **args, int length);

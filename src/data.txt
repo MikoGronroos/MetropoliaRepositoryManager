@@ -1,3 +1,2 @@
 xdd:link.com
-newrepo:repo.com
 lol:lol.net
