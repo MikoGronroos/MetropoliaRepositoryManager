@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 
-int del(char** args){
+int del(char** args, int length){
   char data[256];
   FILE* fptr = fopen("data.txt", "r");
   FILE* fptr2 = fopen("databackup.txt", "a");

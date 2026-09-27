@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int add(char **args){
+int add(char **args, int length){
   FILE* fptr;
   fptr = fopen("data.txt", "a");
-  
   if(fptr == NULL){
   }else{
     fputs(args[1], fptr);

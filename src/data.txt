@@ -1,2 +1,3 @@
-projekti2:link2
-projekti3:link3
+xdd:link.com
+newrepo:repo.com
+lol:lol.net

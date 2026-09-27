@@ -17,7 +17,7 @@ int execute(char** args, int length){
   int returnStatus = -1;
   for(int i = 0; i < amountOfCommands; i++){
     if(strcmp(args[0], cmds[i].commandName) == 0){
-      returnStatus = cmds[i].ptr(args);
+      returnStatus = cmds[i].ptr(args, length);
     }
   }
   if(returnStatus == -1){
