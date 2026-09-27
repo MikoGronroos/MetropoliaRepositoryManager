@@ -9,7 +9,7 @@ int del(char** args, int length){
   if(fptr2 == NULL){
     printf("Couldn't create backup file");
   }else if (fptr == NULL){
-    printf("Couldn't open data");
+    printf("Couldn't open data file");
   }
   else
   {
@@ -20,7 +20,7 @@ int del(char** args, int length){
       char text[128];
       strncpy(text, data, index);
       text[index] = '\0';
-      if(strncmp(text, args[1], strlen(args[1])) != 0){
+      if(strncmp(text, args[1], strlen(text)) != 0){
         fputs(data, fptr2); 
       }
     }

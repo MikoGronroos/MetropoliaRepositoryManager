@@ -2,7 +2,7 @@
 #include <string.h>
 #include "commands.h"
 
-#define amountOfCommands 6
+#define amountOfCommands 7
 
 int execute(char** args, int length){
   command cmds[amountOfCommands] = {
@@ -11,7 +11,8 @@ int execute(char** args, int length){
     {"add", add},
     {"quit", quit},
     {"list", list},
-    {"delete", del}
+    {"delete", del},
+    {"show", show}
   };
 
   int returnStatus = -1;
