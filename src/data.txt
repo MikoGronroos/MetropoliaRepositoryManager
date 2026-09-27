@@ -1,2 +1,2 @@
-kynari:kynari.com
-kouluprojekti:gitlab.com/metropoliaprojekti
+projekti2:link2
+projekti3:link3
