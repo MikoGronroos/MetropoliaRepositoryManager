@@ -17,6 +17,7 @@ int list(char **args){
       int index = find - data;
       char text[128];
       strncpy(text, data, index);
+      text[index] = '\0';
       printf("%s\n", text);
     }
     fclose(fptr);
