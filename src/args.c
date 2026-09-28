@@ -13,6 +13,9 @@ int free_args(arguments* args){
 
 arguments* parse_args(char* input){
   arguments* args = malloc(sizeof(arguments));
+  if(args == NULL){
+    return NULL;
+  }
   int amountOfArgs = 1;
   for(int i = 0; i < strlen(input); i++){
     if(input[i] == ' '){
