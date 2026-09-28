@@ -1,0 +1,3 @@
+tetris:tetris.com
+amen:amen.com
+miko:miko.github.io

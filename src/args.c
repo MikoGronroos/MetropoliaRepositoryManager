@@ -2,6 +2,15 @@
 #include <stdlib.h>
 #include "args.h"
 
+int free_args(arguments* args){ 
+  for (int i = 0; i < args->length; i++) {
+    free(args->args[i]);
+  }
+  free(args->args);
+  free(args);
+  return 0;
+}
+
 arguments* parse_args(char* input){
   arguments* args = malloc(sizeof(arguments));
   int amountOfArgs = 1;

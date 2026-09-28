@@ -19,6 +19,7 @@ int main(){
       if(status == 2){
         running = 0;
       }
+      free_args(args);
     }
   }
   return 0;
