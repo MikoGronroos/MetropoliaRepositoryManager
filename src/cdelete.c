@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "alias.h"
 
 int del(char** args, int length){
   if(length <= 1 || length > 2){
@@ -19,13 +20,12 @@ int del(char** args, int length){
   {
     while (fgets(data, 256, fptr) != NULL)
     {
-      char* find = strchr(data, ':');
-      int index = find - data;
-      char text[128];
-      strncpy(text, data, index);
-      text[index] = '\0';
-      if(strncmp(text, args[1], strlen(text)) != 0){
-        fputs(data, fptr2); 
+      char* text = get_alias(data);
+      if(text != NULL){
+        if(strncmp(text, args[1], strlen(text)) != 0){
+          fputs(data, fptr2); 
+        }
+        free(text);
       }
     }
     fclose(fptr);

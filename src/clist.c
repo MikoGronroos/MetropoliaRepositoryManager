@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "alias.h"
 
 int list(char **args, int length){
   if(length > 1){
@@ -17,12 +18,11 @@ int list(char **args, int length){
   {
     while (fgets(data, 256, fptr) != NULL)
     {
-      char* find = strchr(data, ':');
-      int index = find - data;
-      char text[128];
-      strncpy(text, data, index);
-      text[index] = '\0';
-      printf("%s\n", text);
+      char* text = get_alias(data);
+      if(text != NULL){
+        printf("%s\n", text);
+        free(text);
+      }
     }
     fclose(fptr);
   }
