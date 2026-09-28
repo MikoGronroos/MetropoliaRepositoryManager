@@ -2,6 +2,10 @@
 #include <stdlib.h>
 
 int add(char **args, int length){
+  if(length <= 2 || length > 3){
+    printf("Invalid amount of arguments\n");
+    return 0;
+  }  
   FILE* fptr;
   fptr = fopen("data.txt", "a");
   if(fptr == NULL){

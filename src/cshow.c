@@ -3,13 +3,13 @@
 #include <stdio.h>
 
 int show(char **args, int length){
-  char data[256];
-  FILE* fptr = fopen("data.txt", "r");
-  char* allText = "all";
   if(length <= 1 || length > 2){
     printf("Invalid amount of arguments\n");
     return 0;
   }
+  char data[256];
+  FILE* fptr = fopen("data.txt", "r");
+  char* allText = "all";
   if (fptr == NULL)
   {
     printf("Couldn't open data file\n");

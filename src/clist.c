@@ -2,7 +2,11 @@
 #include <string.h>
 #include <stdio.h>
 
-int list(char **args){
+int list(char **args, int length){
+  if(length > 1){
+    printf("Invalid amount of arguments\n");
+    return 0;
+  }
   char data[256];
   FILE* fptr = fopen("data.txt", "r");
 

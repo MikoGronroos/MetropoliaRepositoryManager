@@ -2,7 +2,11 @@
 #include <stdio.h>
 
 int help(char **args, int length){
-  printf("Here is a list of all the commands.\n\n");
+  if(length > 1){
+    printf("Invalid amount of arguments\n");
+    return 0;
+  }  
+  printf("Here is a list of all the commands.\n");
   printf("add\n");
   printf("show\n");
   printf("list\n");

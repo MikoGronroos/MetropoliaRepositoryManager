@@ -3,6 +3,10 @@
 #include <stdio.h>
 
 int del(char** args, int length){
+  if(length <= 1 || length > 2){
+    printf("Invalid amount of arguments\n");
+    return 0;
+  }  
   char data[256];
   FILE* fptr = fopen("data.txt", "r");
   FILE* fptr2 = fopen("databackup.txt", "a");
