@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 char* get_alias(char* input){
-  char* find = strchr(input, ':');
+  char* find = strchr(input, ';');
   if(find == NULL){
     return NULL;
   }

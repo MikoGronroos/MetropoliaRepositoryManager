@@ -11,7 +11,7 @@ int add(char **args, int length){
   if(fptr == NULL){
   }else{
     fputs(args[1], fptr);
-    fputs(":", fptr);
+    fputs(";", fptr);
     fputs(args[2], fptr);
     fputs("\n", fptr);
     fclose(fptr);
