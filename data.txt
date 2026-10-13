@@ -1,0 +1,3 @@
+metropolia:metropolia.fi
+amen:amen.com
+coop:coop.fi

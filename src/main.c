@@ -11,7 +11,6 @@ int main(){
   int running = 1;
 
   while(running == 1){
-    fflush(stdout);
     fgets(input, sizeof(input), stdin);
     if(strlen(input) != 0){  
       arguments* args = parse_args(input);
