@@ -11,6 +11,7 @@ int main(){
    int running = 1;
    //Main loop of the program 
    while(running == 1){
+      printf("-> ");
       if(fgets(input, sizeof(input), stdin) != NULL){
          if(strlen(input) != 0){
             //Parse arguments to struct and pass the values to wait for execution
