@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-
+//Get the alias from the data file
 char* get_alias(char* input){
   char* find = strchr(input, ';');
   if(find == NULL){

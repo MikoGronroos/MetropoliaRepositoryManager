@@ -22,6 +22,8 @@ arguments* parse_args(char* input){
       amountOfArgs++;
     }
   }
+  
+  //Find argumets from the given string. The arguments are split by space character 
   args->length = amountOfArgs;
   args->args = malloc((amountOfArgs + 1) * sizeof(char *));
   int currentStrSize = 0;

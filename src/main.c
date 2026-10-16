@@ -5,21 +5,25 @@
 #include "args.h"
 
 int main(){
-  printf("Welcome to mitten\n");
-  printf("Type 'help' for list of all available commands\n");
-  char input[128];
-  int running = 1;
-
-  while(running == 1){
-    fgets(input, sizeof(input), stdin);
-    if(strlen(input) != 0){  
-      arguments* args = parse_args(input);
-      int status = execute(args->args, args->length);
-      if(status == 2){
-        running = 0;
+   printf("Welcome to mitten\n");
+   printf("Type 'help' for list of all available commands\n");
+   char input[128];
+   int running = 1;
+   //Main loop of the program 
+   while(running == 1){
+      if(fgets(input, sizeof(input), stdin) != NULL){
+         if(strlen(input) != 0){
+            //Parse arguments to struct and pass the values to wait for execution
+            arguments* args = parse_args(input);
+            int status = execute(args->args, args->length);
+            if(status == 2){
+               running = 0;
+            }
+            free_args(args);
+         }
+      }else {
+         fprintf(stderr, "An error occurred or EOF was reached.\n");
       }
-      free_args(args);
-    }
-  }
-  return 0;
+   }
+   return 0;
 }
